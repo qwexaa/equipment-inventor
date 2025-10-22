@@ -18,7 +18,7 @@ services:
       DATABASE_URL: postgresql://app:app@postgres:5432/inventory?schema=public
       JWT_SECRET: supersecret
       PORT: 4000
-      CORS_ORIGIN: http://192.168.1.195:8080
+      CORS_ORIGIN: http://:8080
       UPLOAD_DIR: /tmp
       ALLOW_REGISTRATION: 'false'
       ADMIN_EMAIL: admin@local
