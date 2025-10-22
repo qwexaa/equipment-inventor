@@ -15,7 +15,7 @@
 - ![Карточка оборудования](docs/screenshots/2-detail.png)
 - ![Склад](docs/screenshots/3-warehouse.png)
 
-Структуру `docs/screenshots/` можно менять по вашему вкусу.
+
 
 ## Технологии
 - Backend: Node.js, Express, TypeScript, Prisma, PostgreSQL, JWT, Multer, Zod
@@ -94,5 +94,4 @@ curl -X POST http://localhost:4000/api/admin/demo/seed \
 - Бэкенд: Node 18, Prisma миграции
 - Рекомендуется включить CORS/Helmet/Rate Limit для production
 
-## Поддержка
-Нашли ошибку или есть предложения — создайте Issue или Pull Request.
+
