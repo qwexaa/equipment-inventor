@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+@layer components {
+  .input {
+    @apply px-3 py-2 border rounded outline-none bg-white/90 backdrop-blur [transition:all_.15s_ease] focus:ring-2 focus:ring-blue-200 focus:border-blue-400 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700 dark:focus:ring-blue-800/40 dark:focus:border-blue-500;
+  }
+  .btn {
+    @apply px-3 py-2 border rounded hover:bg-slate-50 active:scale-[0.99] [transition:all_.15s_ease] bg-white/80 backdrop-blur shadow-sm dark:border-slate-700 dark:hover:bg-slate-800;
+  }
+  .btn-primary {
+    @apply px-3 py-2 rounded text-white active:scale-[0.99] [transition:all_.15s_ease] shadow-md bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border;
+  }
+  .badge-green { @apply bg-green-50 text-green-700 border-green-200; }
+  .badge-yellow { @apply bg-yellow-50 text-yellow-700 border-yellow-200; }
+  .badge-gray { @apply bg-gray-100 text-gray-700 border-gray-200; }
+  .badge-red { @apply bg-red-100 text-red-800 border-red-200; }
+  .badge-blue { @apply bg-blue-100 text-blue-800 border-blue-200; }
+  .badge-slate { @apply bg-slate-100 text-slate-700 border-slate-200; }
+
+  .surface {
+    @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md rounded-2xl shadow-xl;
+  }
+}

@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+model WarehouseItem {
+  id            Int       @id @default(autoincrement())
+  name          String
+  category      String
+  model         String?
+  manufacturer  String?
+  serialNumber  String?
+  quantity      Int       @default(1)
+  unit          String    @default("шт")
+  unitCost      Decimal?  @db.Decimal(12,2)
+  dateReceived  DateTime?
+  supplier      String?
+  status        String    @default("in_stock")
+  location      String?
+  note          String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([status])
+  @@index([name])
+}
+
+model MovementLog {
+  id         Int      @id @default(autoincrement())
+  datetime   DateTime @default(now())
+  user       String
+  action     String
+  itemName   String
+  quantity   Int      @default(1)
+  fromTable  String?
+  toTable    String?
+  note       String?
+
+  @@index([datetime])
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  VIEWER
+  USER
+}
+
+model Equipment {
+  id               Int       @id @default(autoincrement())
+  serialNumber    String?   @unique
+  inventoryNumber String?   @unique
+  account         String?
+  name            String
+  category        String
+  purchaseDate    DateTime?
+  cost            Decimal? @db.Decimal(12,2)
+  location        String?
+  responsible      String?
+  status           String   @default("in_use")
+  // department removed
+  manufacturer     String?
+  model            String?
+  condition        String?
+  transferTo       String?
+  transferDate     DateTime?
+  returnDate       DateTime?
+  note             String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([name])
+  @@index([status])
+}
