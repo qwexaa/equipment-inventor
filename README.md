@@ -87,11 +87,7 @@ curl -X POST http://localhost:4000/api/admin/demo/seed \
 - `backend/` — сервер, Prisma‑схема, маршруты API
 - `frontend/` — клиент (React + Vite), страницы и компоненты
 - `docker-compose.yml` — сервисы (PostgreSQL, backend, frontend)
-- `docs/screenshots/` — скриншоты для README
 
-## Сборка и прод‑развертывание
-- Фронтенд: Vite build + Nginx (multi‑stage Docker)
-- Бэкенд: Node 18, Prisma миграции
-- Рекомендуется включить CORS/Helmet/Rate Limit для production
+
 
 
