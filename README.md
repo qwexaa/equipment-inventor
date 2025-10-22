@@ -11,7 +11,6 @@
 - Удобный интерфейс: быстрый поиск, массовые действия
 
 ## Скриншоты
-Положите изображения в папку `docs/screenshots/` и добавьте сюда ссылки:
 - ![Главный список](docs/screenshots/1-list.png)
 - ![Карточка оборудования](docs/screenshots/2-detail.png)
 - ![Склад](docs/screenshots/3-warehouse.png)
